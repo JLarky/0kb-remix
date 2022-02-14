@@ -4,13 +4,16 @@
   "description": "",
   "license": "",
   "scripts": {
-    "build": "remix build",
+    "build": "npm run build:partytown && npm run build:remix",
+    "build:partytown": "partytown copylib public/~partytown",
+    "build:remix": "remix build",
     "dev": "remix dev",
     "postinstall": "remix setup node",
     "deploy": "fly deploy --remote-only",
     "start": "remix-serve build"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.3.5",
     "@remix-run/react": "^1.1.3",
     "@remix-run/serve": "^1.1.3",
     "react": "^17.0.2",
